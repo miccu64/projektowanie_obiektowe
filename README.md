@@ -4,3 +4,4 @@ Każde zadanie będzie umieszczane w tym repo w osobnym folderze. W każdym fold
 ## Gotowe zadania:
 - Zadanie 1 (Pascal)
 - Zadanie 2 (PHP)
+- Zadanie 3 (Kotlin)
