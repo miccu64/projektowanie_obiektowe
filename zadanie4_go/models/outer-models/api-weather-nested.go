@@ -1,7 +1,7 @@
 package outer_models
 
 type ApiWeatherNested struct {
-	Temperature float32
-	Windspeed   float32
+	Temperature float64
+	Windspeed   float64
 	Time        string
 }
