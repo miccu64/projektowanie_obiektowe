@@ -6,8 +6,10 @@ import (
 	"encoding/json"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/gommon/log"
+	"gorm.io/gorm/clause"
 	"io"
 	"net/http"
+	"time"
 	"zadanie4_go/database"
 	"zadanie4_go/models"
 	outerModels "zadanie4_go/models/outer-models"
@@ -48,7 +50,10 @@ func ModifyWeatherResponse(r *http.Response) error {
 		Windspeed:   apiWeather.Current_Weather.Windspeed,
 		Time:        apiWeather.Current_Weather.Time,
 	}
-	database.Db.Create(&weather)
+	database.Db.Clauses(clause.OnConflict{
+		Columns:   []clause.Column{{Name: "ID"}},
+		DoUpdates: clause.AssignmentColumns([]string{"Temperature", "Windspeed", "Time"}),
+	}).Create(&weather)
 
 	// Serialize the JSON data
 	jsonData, err := json.Marshal(weather)
@@ -56,27 +61,10 @@ func ModifyWeatherResponse(r *http.Response) error {
 		return err
 	}
 
-	// Compress the JSON data using deflate
-	var buf bytes.Buffer
-	writer, err := flate.NewWriter(&buf, flate.DefaultCompression)
-	if err != nil {
-		return err
-	}
-	if _, err := writer.Write(jsonData); err != nil {
-		return err
-	}
-	if err := writer.Close(); err != nil {
-		return err
-	}
-	jsonData = buf.Bytes()
-
-	// Update the response body with the compressed JSON data
 	r.Body = io.NopCloser(bytes.NewReader(jsonData))
 	r.ContentLength = int64(len(jsonData))
+	r.Header.Del("content-encoding")
 
-	if err != nil {
-		return err
-	}
 	return nil
 }
 
@@ -84,17 +72,20 @@ func ProxySkipper(c echo.Context) bool {
 	queryParams := new(models.ForecastQueryParams)
 	err := c.Bind(queryParams)
 	if err != nil {
-		return true
+		return false
 	}
 
 	result := models.WeatherInfo{ID: models.GenerateWeatherInfoID(queryParams.Latitude, queryParams.Longitude)}
 	err = database.Db.First(&result).Error
-	if err == nil {
-		err = c.JSON(http.StatusOK, result)
-		if err != nil {
-			return false
-		}
-		return true
+	if err != nil {
+		return false
 	}
-	return false
+	layout := "2006-01-02T15:04"
+	t, err := time.Parse(layout, result.Time)
+	if err != nil || t.Before(time.Now().Add(time.Duration(-3)*time.Hour)) {
+		return false
+	}
+
+	err = c.JSON(http.StatusOK, result)
+	return err == nil
 }
