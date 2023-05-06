@@ -6,3 +6,4 @@ Każde zadanie będzie umieszczane w tym repo w osobnym folderze. W każdym fold
 - Zadanie 2 (PHP)
 - Zadanie 3 (Kotlin)
 - Zadanie 4 (Go)
+- Zadanie 5 (React)

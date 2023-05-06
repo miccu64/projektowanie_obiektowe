@@ -1,0 +1,13 @@
+# Zadanie 5 - React
+
+Gotowe:\
+3.0 W ramach projektu należy stworzyć dwa komponenty: Produkty oraz
+Płatności; Płatności powinny wysyłać do aplikacji serwerowej dane, a w
+Produktach powinniśmy pobierać dane o produktach z aplikacji
+serwerowej;\
+3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing\
+4.0 Dane pomiędzy wszystkimi komponentami powinny być przesyłane za
+pomocą React hooks\
+4.5 Należy dodać skrypt uruchamiający aplikację serwerową oraz
+kliencką, stworzyć obraz dockerowy oraz odpowiedni docker-compose, aby
+uruchomić aplikację
