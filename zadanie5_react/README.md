@@ -11,3 +11,8 @@ pomocą React hooks\
 4.5 Należy dodać skrypt uruchamiający aplikację serwerową oraz
 kliencką, stworzyć obraz dockerowy oraz odpowiedni docker-compose, aby
 uruchomić aplikację
+
+# Zadanie 6 - Zapaszki
+Hook znajduje się w ../.githooks
+Gotowe:\
+3.0 Należy dodać eslint w hookach gita
