@@ -1,5 +1,6 @@
 import Products from "./Products";
 import {useNavigate} from "react-router-dom";
+import React from 'react';
 
 function Payments() {
     const navigate = useNavigate();

@@ -23,7 +23,7 @@ function Cart() {
 
     return <div>
         {cart && cart.map(product => {
-            return <div style={{marginBottom: "10px"}}>
+            return <div key={product.id} style={{marginBottom: "10px"}}>
                 <h5>Product name: {product.name}</h5>
                 <h5>Quantity: {product.qty}</h5>
                 <h5>Price: {product.price * product.qty}</h5>
