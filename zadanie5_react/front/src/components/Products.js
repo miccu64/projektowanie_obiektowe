@@ -12,7 +12,7 @@ function Products() {
     }, []);
 
     return <div>
-        {products && products.map(product => {
+        {products?.map(product => {
             return <div key={product.id} style={{marginBottom: "10px"}}>
                 <h5>Product name: {product.name}</h5>
                 <h5>Price: {product.price}</h5>
