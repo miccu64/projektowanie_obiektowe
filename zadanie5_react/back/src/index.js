@@ -33,7 +33,6 @@ app.post('/payments', function (req, res) {
         }
         payments[key] = val;
     }
-    console.log(payments)
     res.sendStatus(200);
 });
 
