@@ -7,9 +7,11 @@ function Cart() {
     const [cart, setCart] = useState(null);
 
     React.useEffect(() => {
-        fetch('/cart')
-            .then(response => response.json())
-            .then(data => setCart(data));
+        const fetchData = async () => {
+            const data = await fetch('/cart');
+            setCart(await data.json());
+        }
+        fetchData().catch(console.error);
     }, []);
 
     const handleSubmit = event => {
