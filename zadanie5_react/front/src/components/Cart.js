@@ -14,12 +14,12 @@ function Cart() {
         fetchData().catch(console.error);
     }, []);
 
-    const handleSubmit = event => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const requestOptions = {
             method: "POST"
         };
-        fetch("/cart", requestOptions)
+        await fetch("/cart", requestOptions)
             .then(() => navigate('/'));
     };
 
