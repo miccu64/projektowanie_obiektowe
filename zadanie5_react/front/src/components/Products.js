@@ -4,9 +4,11 @@ function Products() {
     const [products, setProducts] = useState(null);
 
     React.useEffect(() => {
-        fetch('/products')
-            .then(response => response.json())
-            .then(data => setProducts(data));
+        const fetchData = async () => {
+            const data = await fetch('/products');
+            setProducts(await data.json());
+        }
+        fetchData().catch(console.error);
     }, []);
 
     return <div>

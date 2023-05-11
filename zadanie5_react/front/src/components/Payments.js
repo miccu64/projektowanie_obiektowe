@@ -4,20 +4,18 @@ import React from 'react';
 
 function Payments() {
     const navigate = useNavigate();
-    const handleSubmit = event => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
         const data = {};
         for (const [key, value] of formData.entries()) {
             data[key] = value;
         }
+
         const requestOptions = {
             method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(data)
         };
-        console.log(data)
-        console.log(requestOptions)
-
-        fetch("/payments", requestOptions)
+        await fetch("/payments", requestOptions)
             .then(() => window.location.reload());
     };
 
