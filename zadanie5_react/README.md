@@ -24,6 +24,7 @@ aplikacji klienckiej)\
 w kodzie w Sonarze (kod aplikacji klienckiej)\
 5.0 Zredukować duplikaty kodu do 0%
 
-https://sonarcloud.io/project/overview?id=miccu64_projektowanie_obiektowe
-
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=miccu64_projektowanie_obiektowe&metric=bugs)](https://sonarcloud.io/summary/new_code?id=miccu64_projektowanie_obiektowe)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=miccu64_projektowanie_obiektowe&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=miccu64_projektowanie_obiektowe)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=miccu64_projektowanie_obiektowe&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=miccu64_projektowanie_obiektowe)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=miccu64_projektowanie_obiektowe&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=miccu64_projektowanie_obiektowe)
