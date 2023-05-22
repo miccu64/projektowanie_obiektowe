@@ -8,3 +8,4 @@ Każde zadanie będzie umieszczane w tym repo w osobnym folderze. W każdym fold
 - Zadanie 4 (Go)
 - Zadanie 5 (React)
 - Zadanie 6 (Zapaszki)
+- Zadanie 8 (Testy)
