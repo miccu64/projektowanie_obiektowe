@@ -10,3 +10,4 @@ Każde zadanie będzie umieszczane w tym repo w osobnym folderze. W każdym fold
 - Zadanie 6 (Zapaszki)
 - Zadanie 7 (Antywzorce) 
 - Zadanie 8 (Testy)
+- Zadanie 9 (Mobile first)

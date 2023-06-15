@@ -31,7 +31,7 @@ const CartScreen = ({navigation}) => {
                     <Text>Name: {product.name}</Text>
                     <Text>Category: {categoryName}</Text>
                     <Text>Quantity: {quantity}</Text>
-                    <Text>Price: {product.price * quantity}</Text>
+                    <Text>Total price: {product.price * quantity}</Text>
                     <Button title={"Delete from cart"} onPress={() => deleteFromCart(product.id)}></Button>
                 </View>)
             })}
@@ -40,6 +40,8 @@ const CartScreen = ({navigation}) => {
             </View>
             <View style={styles.addMargin}>
                 <Button title={"Pay for all"} onPress={payDeleteAllCart}></Button>
+            </View>
+            <View style={styles.addMargin}>
                 <Button title={"Delete all from cart"} onPress={payDeleteAllCart}></Button>
             </View>
         </View>

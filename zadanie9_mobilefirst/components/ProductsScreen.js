@@ -8,6 +8,7 @@ const ProductsScreen = ({navigation}) => {
         } else {
             cart[productId] = 1;
         }
+        alert('Added product to cart');
     }
 
     return (
