@@ -1,5 +1,9 @@
 FROM node:latest
 
-COPY . /back
+WORKDIR /back
 
-RUN cd /back && npm i
+COPY . .
+RUN npm i
+
+EXPOSE 3001
+CMD ["npm", "start"]

@@ -1,5 +1,9 @@
 FROM node:latest
 
-COPY . /front
+WORKDIR /front
 
-RUN cd /front && npm i
+COPY . .
+RUN npm i
+
+EXPOSE 3000
+CMD ["npm", "start"]
