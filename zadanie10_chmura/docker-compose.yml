@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+  front:
+    build: ./
+    ports:
+      - "3000:3000"
+    networks: 
+      - shared-network
+    working_dir: /front
+    command: npm start
+    links:
+      - back
+
+  back:
+    build: ./
+    ports:
+      - "3001:3001"
+    networks: 
+      - shared-network
+    working_dir: /back
+    command: npm start
+    expose:
+      - 3001
+
+volumes:
+  global-volume:
+
+networks:
+  shared-network: {}
