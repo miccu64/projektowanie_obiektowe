@@ -1,5 +1,5 @@
 FROM node:latest
 
-COPY /back /back
+COPY . /back
 
 RUN cd /back && npm i
