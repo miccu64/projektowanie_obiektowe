@@ -30,4 +30,11 @@ jobs:
           context: ./zadanie10_chmura/front
           push: true
           tags: miccu64/zadanie10-front:latest
+      
+      - name: Build and push Docker image - Backend
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: ./zadanie10_chmura/back
+          push: true
+          tags: miccu64/zadanie10-back:latest
 
