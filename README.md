@@ -11,3 +11,4 @@ Każde zadanie będzie umieszczane w tym repo w osobnym folderze. W każdym fold
 - Zadanie 7 (Antywzorce) 
 - Zadanie 8 (Testy)
 - Zadanie 9 (Mobile first)
+- Zadanie 10 (Chmura)
