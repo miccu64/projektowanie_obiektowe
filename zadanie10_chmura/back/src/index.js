@@ -1,5 +1,5 @@
 const express = require('express');
-const PORT = 3001;
+const PORT = 80;
 const app = express();
 const ProductModel = require('./models/ProductModel')
 
@@ -9,8 +9,8 @@ let products = [new ProductModel(1, "Apple", 2.22),
 
 let payments = {};
 
-app.use(express.json());       // to support JSON-encoded bodies
-app.use(express.urlencoded()); // to support URL-encoded bodies
+app.use(express.json());
+app.use(express.urlencoded());
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -52,6 +52,6 @@ app.post('/cart', function (req, res) {
     res.sendStatus(200);
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server listening on ${PORT}`);
 });

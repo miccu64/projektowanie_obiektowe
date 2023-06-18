@@ -5,5 +5,5 @@ WORKDIR /back
 COPY . .
 RUN npm i
 
-EXPOSE 3001
+EXPOSE 80
 CMD ["npm", "start"]
