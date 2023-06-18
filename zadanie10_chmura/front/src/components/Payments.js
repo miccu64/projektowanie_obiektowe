@@ -15,7 +15,7 @@ function Payments() {
         const requestOptions = {
             method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(data)
         };
-        await fetch("/payments", requestOptions)
+        await fetch("/api/payments", requestOptions)
             .then(() => window.location.reload());
     };
 

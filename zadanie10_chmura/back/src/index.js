@@ -19,11 +19,11 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.get('/products', function (req, res) {
+app.get('/api/products', function (req, res) {
     res.json(products);
 });
 
-app.post('/payments', function (req, res) {
+app.post('/api/payments', function (req, res) {
     for (const key of Object.keys(req.body)) {
         let val = payments[key];
         if (val) {
@@ -36,7 +36,7 @@ app.post('/payments', function (req, res) {
     res.sendStatus(200);
 });
 
-app.get('/cart', function (req, res) {
+app.get('/api/cart', function (req, res) {
     const productsCopy = products.slice().map(p => {
         p.qty = payments[p.id];
         if (!p.qty) {
@@ -47,7 +47,7 @@ app.get('/cart', function (req, res) {
     res.json(productsCopy);
 });
 
-app.post('/cart', function (req, res) {
+app.post('/api/cart', function (req, res) {
     payments = {};
     res.sendStatus(200);
 });

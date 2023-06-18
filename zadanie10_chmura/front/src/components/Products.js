@@ -5,7 +5,8 @@ function Products() {
 
     React.useEffect(() => {
         const fetchData = async () => {
-            const data = await fetch('/products');
+            const data = await fetch('/api/products');
+            console.log(data)
             setProducts(await data.json());
         }
         fetchData().catch(console.error);

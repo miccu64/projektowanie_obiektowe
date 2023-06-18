@@ -8,7 +8,7 @@ function Cart() {
 
     React.useEffect(() => {
         const fetchData = async () => {
-            const data = await fetch('/cart');
+            const data = await fetch('/api/cart');
             setCart(await data.json());
         }
         fetchData().catch(console.error);
@@ -19,7 +19,7 @@ function Cart() {
         const requestOptions = {
             method: "POST"
         };
-        await fetch("/cart", requestOptions)
+        await fetch("/api/cart", requestOptions)
             .then(() => navigate('/'));
     };
 
